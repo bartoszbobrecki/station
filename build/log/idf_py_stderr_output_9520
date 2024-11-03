@@ -1,0 +1,211 @@
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM6 instead...[0m
+[0;33m--- esp-idf-monitor 1.5.0 on \\.\COM6 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_main at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:227
+0x40149b93: main_task at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/app_startup.c:208
+0x4008a9b1: vPortTaskWrapper at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c:134
+[0m
+[0;33m--- 0x40080400: _init at ??:?
+[0m
+[0;33m--- 0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+[0m
+[0;33m--- 0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+[0m
+[0;33m--- 0x40081a9a: panic_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/panic.c:463
+0x40089e65: esp_system_abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/port/esp_system_chip.c:92
+0x40091b5d: abort at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/newlib/abort.c:38
+0x40089e5b: _esp_error_check_failed at C:/Users/Bartosz/esp/v5.3.1/esp-idf/components/esp_system/esp_err.c:49
+0x400d7073: wifi_init_sta at C:/Users/Bartosz/Desktop/iot/station/main/station_example_main.c:105 (discriminator 1)
+0x400d7334: app_ma
