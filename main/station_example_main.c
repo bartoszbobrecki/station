@@ -7,17 +7,30 @@
 #include "esp_event.h"
 #include "esp_system.h"
 #include "driver/gpio.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include "lwip/sockets.h"
+#include "lwip/netdb.h"
 
-#define WIFI_SSID "your_ssid"
-#define WIFI_PASS "your_password"
-#define BLINK_GPIO GPIO_NUM_2  // Adjust this according to your setup
-#define CONFIG_BLINK_PERIOD 500  // Blink period in milliseconds
 
-static const char *TAG = "wifi_led_example";
+
+#define WIFI_SSID "bobternet"
+#define WIFI_PASS "admin377"
+#define BLINK_GPIO GPIO_NUM_2  
+#define CONFIG_BLINK_PERIOD 1000
+#define HTTP_SERVER "httpbin.org"
+#define HTTP_PORT 80
+#define HTTP_REQUEST "GET / HTTP/1.1\r\nHost: " HTTP_SERVER "\r\nConnection: close\r\n\r\n"
+
+
+
+
+
+static const char *TAG = "system";
 static bool s_led_state = false;
-static bool is_connected = false;  // Tracks Wi-Fi connection status
+static bool is_connected = false;  
 
-// Wi-Fi event handler to update connection status
+
 static void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data) {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_START) {
         esp_wifi_connect();
@@ -31,19 +44,19 @@ static void wifi_event_handler(void *arg, esp_event_base_t event_base, int32_t e
     }
 }
 
-// Function to toggle LED state
+
 static void blink_led(void) {
     gpio_set_level(BLINK_GPIO, s_led_state);
 }
 
-// Configure the LED GPIO
+
 static void configure_led(void) {
     ESP_LOGI(TAG, "Configured LED for blinking.");
     gpio_reset_pin(BLINK_GPIO);
     gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
 }
 
-// Wi-Fi initialization function
+
 void wifi_init() {
     esp_netif_init();
     esp_event_loop_create_default();
@@ -67,7 +80,72 @@ void wifi_init() {
     esp_wifi_start();
 }
 
-// Main application function
+
+void http_get_task(void *pvParameters) {
+    while (!is_connected) {
+        vTaskDelay(1000 / portTICK_PERIOD_MS);  
+    }
+
+    struct addrinfo hints = { 0 };
+    struct addrinfo *res;
+    int sock;
+
+    hints.ai_family = AF_INET;
+    hints.ai_socktype = SOCK_STREAM;
+
+    // Resolve the IP address of the server
+    int err = getaddrinfo(HTTP_SERVER, "80", &hints, &res);
+    if (err != 0 || res == NULL) {
+        ESP_LOGE(TAG, "DNS lookup failed for %s", HTTP_SERVER);
+        vTaskDelete(NULL);
+        return;
+    }
+
+
+    sock = socket(res->ai_family, res->ai_socktype, 0);
+    if (sock < 0) {
+        ESP_LOGE(TAG, "Socket allocation failed");
+        freeaddrinfo(res);
+        vTaskDelete(NULL);
+        return;
+    }
+
+    // Connect to the server
+    if (connect(sock, res->ai_addr, res->ai_addrlen) != 0) {
+        ESP_LOGE(TAG, "Socket connection failed");
+        close(sock);
+        freeaddrinfo(res);
+        vTaskDelete(NULL);
+        return;
+    }
+    freeaddrinfo(res);  // Free the address info structure
+
+    // Send the HTTP GET request
+    if (write(sock, HTTP_REQUEST, strlen(HTTP_REQUEST)) < 0) {
+        ESP_LOGE(TAG, "Failed to send request");
+        close(sock);
+        vTaskDelete(NULL);
+        return;
+    }
+
+    // Receive the response
+    char recv_buf[512];
+    int len;
+    ESP_LOGI(TAG, "HTTP response:");
+    do {
+        len = read(sock, recv_buf, sizeof(recv_buf) - 1);
+        if (len > 0) {
+            recv_buf[len] = '\0';  // Null-terminate the response
+            printf("%s", recv_buf);  // Print the response to the console
+        }
+    } while (len > 0);
+
+    // Close the socket
+    close(sock);
+    ESP_LOGI(TAG, "HTTP GET request complete");
+    vTaskDelete(NULL);
+}
+
 void app_main(void) {
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND) {
@@ -79,17 +157,21 @@ void app_main(void) {
     configure_led();
     wifi_init();
 
+    xTaskCreate(&http_get_task, "http_get_task", 4096, NULL, 5, NULL);
+
     while (1) {
+
+
         if (!is_connected) {
             ESP_LOGI(TAG, "Flashing LED as Wi-Fi is not connected.");
             s_led_state = !s_led_state;  // Toggle LED state
             blink_led();
-            vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
+            vTaskDelay(CONFIG_BLINK_PERIOD);
         } else {
             // Turn off LED and stop flashing if connected
             gpio_set_level(BLINK_GPIO, 0);
             ESP_LOGI(TAG, "Connected to Wi-Fi, LED stopped flashing.");
-            vTaskDelay(1000 / portTICK_PERIOD_MS);  // Check every second if disconnected
+            vTaskDelay(1000);  // Check every second if disconnected
         }
     }
 }
