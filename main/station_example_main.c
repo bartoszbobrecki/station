@@ -82,68 +82,74 @@ void wifi_init() {
 
 
 void http_get_task(void *pvParameters) {
-    while (!is_connected) {
-        vTaskDelay(1000 / portTICK_PERIOD_MS);  
-    }
 
-    struct addrinfo hints = { 0 };
-    struct addrinfo *res;
-    int sock;
+    while(1){
 
-    hints.ai_family = AF_INET;
-    hints.ai_socktype = SOCK_STREAM;
-
-    // Resolve the IP address of the server
-    int err = getaddrinfo(HTTP_SERVER, "80", &hints, &res);
-    if (err != 0 || res == NULL) {
-        ESP_LOGE(TAG, "DNS lookup failed for %s", HTTP_SERVER);
-        vTaskDelete(NULL);
-        return;
-    }
-
-
-    sock = socket(res->ai_family, res->ai_socktype, 0);
-    if (sock < 0) {
-        ESP_LOGE(TAG, "Socket allocation failed");
-        freeaddrinfo(res);
-        vTaskDelete(NULL);
-        return;
-    }
-
-    // Connect to the server
-    if (connect(sock, res->ai_addr, res->ai_addrlen) != 0) {
-        ESP_LOGE(TAG, "Socket connection failed");
-        close(sock);
-        freeaddrinfo(res);
-        vTaskDelete(NULL);
-        return;
-    }
-    freeaddrinfo(res);  // Free the address info structure
-
-    // Send the HTTP GET request
-    if (write(sock, HTTP_REQUEST, strlen(HTTP_REQUEST)) < 0) {
-        ESP_LOGE(TAG, "Failed to send request");
-        close(sock);
-        vTaskDelete(NULL);
-        return;
-    }
-
-    // Receive the response
-    char recv_buf[512];
-    int len;
-    ESP_LOGI(TAG, "HTTP response:");
-    do {
-        len = read(sock, recv_buf, sizeof(recv_buf) - 1);
-        if (len > 0) {
-            recv_buf[len] = '\0';  // Null-terminate the response
-            printf("%s", recv_buf);  // Print the response to the console
+        while (!is_connected) {
+            vTaskDelay(1000 / portTICK_PERIOD_MS);  
         }
-    } while (len > 0);
 
-    // Close the socket
-    close(sock);
-    ESP_LOGI(TAG, "HTTP GET request complete");
-    vTaskDelete(NULL);
+        struct addrinfo hints = { 0 };
+        struct addrinfo *res;
+        int sock;
+
+        hints.ai_family = AF_INET;
+        hints.ai_socktype = SOCK_STREAM;
+
+        // Resolve the IP address of the server
+        int err = getaddrinfo(HTTP_SERVER, "80", &hints, &res);
+        if (err != 0 || res == NULL) {
+            ESP_LOGE(TAG, "DNS lookup failed for %s", HTTP_SERVER);
+            vTaskDelete(NULL);
+            return;
+        }
+
+
+        sock = socket(res->ai_family, res->ai_socktype, 0);
+        if (sock < 0) {
+            ESP_LOGE(TAG, "Socket allocation failed");
+            freeaddrinfo(res);
+            vTaskDelete(NULL);
+            return;
+        }
+
+        // Connect to the server
+        if (connect(sock, res->ai_addr, res->ai_addrlen) != 0) {
+            ESP_LOGE(TAG, "Socket connection failed");
+            close(sock);
+            freeaddrinfo(res);
+            vTaskDelete(NULL);
+            return;
+        }
+        freeaddrinfo(res);  // Free the address info structure
+
+        // Send the HTTP GET request
+        if (write(sock, HTTP_REQUEST, strlen(HTTP_REQUEST)) < 0) {
+            ESP_LOGE(TAG, "Failed to send request");
+            close(sock);
+            vTaskDelete(NULL);
+            return;
+        }
+
+        // Receive the response
+        char recv_buf[512];
+        int len;
+        ESP_LOGI(TAG, "HTTP response:");
+        do {
+            len = read(sock, recv_buf, sizeof(recv_buf) - 1);
+            if (len > 0) {
+                recv_buf[len] = '\0';  // Null-terminate the response
+                printf("%s", recv_buf);  // Print the response to the console
+            }
+        } while (len > 0);
+
+        // Close the socket
+        close(sock);
+        ESP_LOGI(TAG, "HTTP GET request complete");
+
+        vTaskDelay(10000);  
+    }
+
 }
 
 void app_main(void) {
@@ -166,7 +172,7 @@ void app_main(void) {
             ESP_LOGI(TAG, "Flashing LED as Wi-Fi is not connected.");
             s_led_state = !s_led_state;  // Toggle LED state
             blink_led();
-            vTaskDelay(CONFIG_BLINK_PERIOD);
+            vTaskDelay(CONFIG_BLINK_PERIOD / portTICK_PERIOD_MS);
         } else {
             // Turn off LED and stop flashing if connected
             gpio_set_level(BLINK_GPIO, 0);
@@ -174,4 +180,9 @@ void app_main(void) {
             vTaskDelay(1000);  // Check every second if disconnected
         }
     }
+
+
+
+
+
 }

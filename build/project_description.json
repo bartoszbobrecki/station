@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "wifi_station",
-    "project_version":    "a0b6484-dirty",
+    "project_version":    "954d921-dirty",
     "project_path":       "C:/Users/Bartosz/Desktop/iot/station",
     "idf_path":           "C:/Users/Bartosz/esp/v5.3.1/esp-idf",
     "build_dir":          "C:/Users/Bartosz/Desktop/iot/station/build",
